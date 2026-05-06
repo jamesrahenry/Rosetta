@@ -2,6 +2,8 @@
 
 Mechanistic interpretability research on how transformer models encode concepts.
 
+*Named for the Rosetta Stone — the same inscription in multiple scripts. These papers ask whether transformer models of different architectures encode concepts in the same geometric language.*
+
 Four papers, three public repos.
 
 ---
