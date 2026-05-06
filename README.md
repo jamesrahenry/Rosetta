@@ -8,6 +8,16 @@ Four papers, three public repos.
 
 ---
 
+## Repositories
+
+| Repo | Purpose |
+|---|---|
+| [rosetta_tools](https://github.com/jamesrahenry/Rosetta_Tools) | Python library — activation extraction, CAZ metrics, Procrustes alignment, ablation, GEM construction. Install: `pip install git+https://github.com/jamesrahenry/Rosetta_Tools.git@v1.1.0` |
+| [rosetta_analysis](https://github.com/jamesrahenry/Rosetta_Analysis) | Analysis scripts — all figures and tables in Papers 1–4, mapped in `PAPER_MAP.md` |
+| [Rosetta_Concept_Pairs](https://github.com/jamesrahenry/Rosetta_Concept_Pairs) | Dataset — 18 concepts, 38,854 contrastive text pairs, Apache 2.0 |
+
+---
+
 ## Papers
 
 | | Title | Description |
@@ -18,16 +28,6 @@ Four papers, three public repos.
 | 4 | [Concept-Selective Convergence: Cross-Architecture Evidence for the Platonic Representation Hypothesis via Zero-PCA Procrustes Alignment](https://arxiv.org/abs/PLACEHOLDER) | Depth-stratified PRH test: Δ=+0.134, 98/98 positive, p=1.2×10⁻³⁰ across 7 concepts and multiple architecture families |
 
 Papers 1–4 are a coordinated series. Paper 1 cites 2–4 as companions; all were developed concurrently and release together.
-
----
-
-## Repositories
-
-| Repo | Purpose |
-|---|---|
-| [rosetta_tools](https://github.com/jamesrahenry/Rosetta_Tools) | Python library — activation extraction, CAZ metrics, Procrustes alignment, ablation, GEM construction. Install: `pip install git+https://github.com/jamesrahenry/Rosetta_Tools.git@v1.1.0` |
-| [rosetta_analysis](https://github.com/jamesrahenry/Rosetta_Analysis) | Analysis scripts — all figures and tables in Papers 1–4, mapped in `PAPER_MAP.md` |
-| [Rosetta_Concept_Pairs](https://github.com/jamesrahenry/Rosetta_Concept_Pairs) | Dataset — 18 concepts, 38,854 contrastive text pairs, Apache 2.0 |
 
 ---
 
