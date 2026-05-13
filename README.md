@@ -31,25 +31,39 @@ Papers 1–4 are a coordinated series. Paper 1 cites 2–4 as companions; all we
 
 ---
 
+## Notebooks
+
+Three Jupyter notebooks in [`notebooks/`](notebooks/) provide hands-on introductions — no prior familiarity with the papers required.
+
+| Notebook | What it does | Requirements |
+|----------|--------------|--------------|
+| [`01_caz_framework_introduction.ipynb`](notebooks/01_caz_framework_introduction.ipynb) | Tour of the main findings across four architectures using pre-computed results from Hugging Face | CPU, no model |
+| [`02_caz_interactive_demo.ipynb`](notebooks/02_caz_interactive_demo.ipynb) | Load Qwen2.5-7B-Instruct (4-bit) and run CAZ on your own concept pairs | GPU ≥ 6 GB |
+| [`03_caz_implementation_demo.ipynb`](notebooks/03_caz_implementation_demo.ipynb) | Implement the metrics and Procrustes alignment from scratch; reproduce the Paper 4 cross-architecture convergence result | CPU, no model |
+
+Pre-computed results are in the [Rosetta Activations](https://huggingface.co/datasets/james-ra-henry/Rosetta-Activations) dataset on Hugging Face.
+
+---
+
 ## Reproducing results
 
-```bash
-# 1. Install the library
-pip install git+https://github.com/jamesrahenry/Rosetta_Tools.git@v1.1.0
+Each paper has a dedicated reproduce script in [rosetta_analysis](https://github.com/jamesrahenry/Rosetta_Analysis). See `PAPER_MAP.md` in that repo for the exact script → figure mapping.
 
-# 2. Clone analysis scripts and dataset
+```bash
+pip install git+https://github.com/jamesrahenry/Rosetta_Tools.git@v1.1.0
 git clone https://github.com/jamesrahenry/Rosetta_Analysis.git
 git clone https://github.com/jamesrahenry/Rosetta_Concept_Pairs.git
-
-# 3. Run extraction, then analysis
 cd Rosetta_Analysis
-python extraction/extract.py             # produces ~/rosetta_data/models/
-python caz/deep_dive.py                  # Paper 1 figures
-python gem/build_gems.py                 # Paper 2 figures
-python alignment/align_trajectory.py    # Paper 4 figures
 ```
 
-See `rosetta_analysis/PAPER_MAP.md` for the exact script → figure mapping per paper.
+| Paper | Reproduce script |
+|-------|-----------------|
+| 1 — CAZ Framework | `bash scripts/reproduce_p1.sh` |
+| 2 — GEM | `bash scripts/reproduce_p2.sh` |
+| 3 — CAZ Validation | `bash scripts/reproduce_p3.sh` |
+| 4 — PRH Convergence | `bash scripts/reproduce_p4.sh` |
+
+All scripts read from `~/rosetta_data/` and write figures to `~/rosetta_data/results/`. Pre-extracted activations can be restored from Hugging Face — see `rosetta_analysis/README.md`.
 
 ---
 
