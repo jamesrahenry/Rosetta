@@ -24,7 +24,7 @@ Four papers, three public repos.
 |---|---|---|
 | 1 | [The Concept Allocation Zone: Tracking How Concepts Form Across Transformer Depth](https://arxiv.org/abs/PLACEHOLDER) | Identifies layer regions where concept separation, coherence, and velocity peak — consistently across 26 models and 7 concepts |
 | 2 | [Geometric Evolution Maps: Extracting Stable Concept Probes from Transformer Residual Streams](https://arxiv.org/abs/PLACEHOLDER) | GEM nodes outperform single-layer peaks as probe extraction sites; 56.6% strict handoff wins across 17 concepts × 16 models |
-| 3 | [Concept Encoding Strategies Across 26 Transformers: A Concept Allocation Zone Evaluation](https://arxiv.org/abs/PLACEHOLDER) | Validates CAZ predictions on 26 architectures; 95% causal ablation rate on gentle CAZes across 15 of 34 models |
+| 3 | [Concept Encoding Strategies Across 28 Transformers: A Concept Allocation Zone Evaluation](https://arxiv.org/abs/PLACEHOLDER) | Validates that CAZ/GEM constructs are causally active and predictive across 28 base models — 3.60× ablation enrichment at CAZ peaks (direction-specific), GEM handoff outperforms peak ablation, and a moderate cross-architecture concept-ordering tendency (median τ = 0.404) |
 | 4 | [Concept-Selective Convergence: Cross-Architecture Evidence for the Platonic Representation Hypothesis via Zero-PCA Procrustes Alignment](https://arxiv.org/abs/PLACEHOLDER) | Depth-stratified PRH test: Δ=+0.134, 98/98 positive, p=1.2×10⁻³⁰ across 7 concepts and multiple architecture families |
 
 Papers 1–4 are a coordinated series. Paper 1 cites 2–4 as companions; all were developed concurrently and release together.
@@ -33,13 +33,15 @@ Papers 1–4 are a coordinated series. Paper 1 cites 2–4 as companions; all we
 
 ## Notebooks
 
-Three Jupyter notebooks in [`notebooks/`](notebooks/) provide hands-on introductions — no prior familiarity with the papers required.
+Five Jupyter notebooks in [`notebooks/`](notebooks/) provide hands-on introductions — no prior familiarity with the papers required.
 
 | Notebook | What it does | Requirements |
 |----------|--------------|--------------|
-| [`01_caz_framework_introduction.ipynb`](notebooks/01_caz_framework_introduction.ipynb) | Tour of the main findings across four architectures using pre-computed results from Hugging Face | CPU, no model |
-| [`02_caz_interactive_demo.ipynb`](notebooks/02_caz_interactive_demo.ipynb) | Load Qwen2.5-7B (4-bit) and run CAZ on your own concept pairs | GPU ≥ 6 GB |
-| [`03_caz_implementation_demo.ipynb`](notebooks/03_caz_implementation_demo.ipynb) | Implement the metrics and Procrustes alignment from scratch; reproduce the Paper 4 cross-architecture convergence result | CPU, no model |
+| [`01_caz_framework_introduction.ipynb`](notebooks/01_caz_framework_introduction.ipynb) | Tour of the main findings across architectures using pre-computed results from Hugging Face | CPU, no model |
+| [`02_gem_paper_companion.ipynb`](notebooks/02_gem_paper_companion.ipynb) | Companion walkthrough for Paper 2 (GEM) on pre-computed results | CPU, no model |
+| [`03_caz_validation_paper_companion.ipynb`](notebooks/03_caz_validation_paper_companion.ipynb) | Companion walkthrough for Paper 3 (CAZ Validation) on pre-computed results | CPU, no model |
+| [`04_caz_implementation_demo.ipynb`](notebooks/04_caz_implementation_demo.ipynb) | Implement the metrics and Procrustes alignment from scratch; reproduce the Paper 4 cross-architecture convergence result | CPU, no model |
+| [`05_caz_interactive_demo.ipynb`](notebooks/05_caz_interactive_demo.ipynb) | Load Qwen2.5-7B (4-bit) and run CAZ on your own concept pairs | GPU ≥ 6 GB |
 
 Pre-computed results are in the [Rosetta Activations](https://huggingface.co/datasets/james-ra-henry/Rosetta-Activations) dataset on Hugging Face.
 
@@ -65,6 +67,21 @@ The reproduce scripts use `uv sync` to install all dependencies automatically (i
 | 4 — PRH Convergence | `bash scripts/reproduce_p4.sh` |
 
 All scripts read from `~/rosetta_data/` and write figures to `~/rosetta_data/results/`. Pre-extracted activations can be restored from Hugging Face — see `rosetta_analysis/README.md`.
+
+## Citation & archival DOIs
+
+Each artifact has (or will have, at publication) a version-pinned Zenodo DOI for citation. The GitHub/HF links above are the working locations; the DOIs below are the archival citation targets.
+
+| Artifact | Archival DOI | Status |
+|---|---|---|
+| rosetta_tools (library) | [10.5281/zenodo.20361433](https://doi.org/10.5281/zenodo.20361433) | ✅ v1.3.1 |
+| Rosetta_Concept_Pairs (corpus) | [10.5281/zenodo.20059650](https://doi.org/10.5281/zenodo.20059650) | ✅ |
+| rosetta_analysis (analysis code) | — | ⏳ to be minted at publication (papers cite specific analysis scripts) |
+| Rosetta-Activations (HF dataset) | — | ⏳ HF-minted DOI to be added at publication (currently cited by dataset URL) |
+
+Version bumps and the two pending DOIs are assigned at publication time.
+
+---
 
 ---
 
